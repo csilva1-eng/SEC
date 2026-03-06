@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect, useRef } from 'react'
+import HomePage from './Pages/HomePage';
+import { CSSTransition } from 'react-transition-group';
+import './index.css';
+import IntroPage from './Pages/IntroPage';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [show, setShow] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(true);
+    }, 1300);
+  }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <IntroPage/>
+      <CSSTransition
+        in = {show}
+        nodeRef = {ref}
+        timeout = {1900}
+        classNames = "fade-in"
+        mountOnEnter>
+        {/* <HomePage/> */}
+        <h1 ref={ref}>Hi</h1>
+      </CSSTransition>
+      
     </>
   )
 }
