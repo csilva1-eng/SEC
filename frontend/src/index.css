@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Blonde'; 
   src: url('./fonts/Blonde_Font.otf') format('opentype');
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
   font-display: swap; 
 }
@@ -16,10 +16,17 @@
 @font-face {
     font-family: 'Futura';
     src: url('./fonts/futura Bold Oblique.otf') format('opentype');
-    font-weight: bold;
+    font-weight: 700;
     font-style: oblique;
     font-display: swap;
+}
 
+@font-face {
+    font-family: 'Futura';
+    src: url('./fonts/Futura\ Medium\ Italic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
 }
 
 #header {
@@ -40,13 +47,79 @@
     justify-content: flex-start;
 }
 
+.nav-link{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+.nav-link li:not(:last-child)::after {
+    content: '|';
+    margin: 0 10px;
+}
+
+#passion-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 25vw;
+}
+#passion-list li {
+    text-align: center;
+    font-family: 'Futura';
+}
+/* #passion-list li:not(:last-child)::after {
+    content: '';
+    display: block;
+    margin: 6px 0;
+    border-bottom: 1px solid black;
+} */
+
+#passion-list li::before {
+    content: '';
+    display: block;
+    margin: 6px 0;
+    border-bottom: 1px solid black;
+}
+
+.passion-text {
+    font-family: 'Futura';
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+#passions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    width: 100vw;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-link li {
+    display: inline;
+    font-family: 'Futura';
+    font-style: italic;
+    font-weight: 500;
+}
+
 #name-title {
     display: flex;
     flex:1;
     justify-content: center;
     font-size: 14px;
     font-family: 'Futura';
-    font-weight: bold;
+    font-weight: 700;
     font-style: oblique;
 }
 
