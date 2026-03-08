@@ -23,8 +23,10 @@ function App() {
         timeout = {1900}
         classNames = "fade-in"
         mountOnEnter>
-        {/* <HomePage/> */}
-        <h1 ref={ref}>Hi</h1>
+          <div ref = {ref}>
+            <HomePage />
+            {/* <h1>Hi</h1> */}
+          </div>
       </CSSTransition>
       
     </>
