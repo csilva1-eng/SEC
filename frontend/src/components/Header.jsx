@@ -3,7 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import {grey, blueGrey} from '@mui/material/colors';
 import { useState, useEffect } from 'react';
 import linkedinBlack from '../assets/InBug-Black.png';
-
+import linkedinWhite from '../assets/InBug-White.png';
 
 const BGSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase.Mui-checked': {
@@ -32,28 +32,42 @@ const GSwitch = styled(Switch)(({ theme }) => ({
 function Header(){
 
     const label = { inputProps: { 'aria-label': 'Switch demo' } };
-    
-        const [checked, setChecked] = useState(false);
-    
+
+    const [linkedin, setLinkedin] = useState(linkedinBlack);
+
+
+        const [theme, setTheme] = useState(() => {
+            const savedTheme = localStorage.getItem('theme');
+            return savedTheme === "true";
+        });
         const switchTheme = () => {
-            setChecked(!checked);
+            setTheme(!theme);
         }
     
         useEffect(() => {
             //something for theme switch
             console.log("Theme switch")
-        }, [checked])
+            if(theme){
+                document.documentElement.setAttribute('date-theme', 'dark');
+                setLinkedin(linkedinWhite);
+            } else {
+                document.documentElement.removeAttribute('date-theme');
+                setLinkedin(linkedinBlack);
+            }
+
+            localStorage.setItem('theme', theme);
+        }, [theme])
 
     return(
 <   header id = "header">
         <div id = "socials">
-            <img src = {linkedinBlack} alt = "logo" className = "logo"/>
+            <img src = {linkedin} alt = "logo" className = "logo"/>
         </div>
         <div id = "name-title">
             <h1>Christopher Silva</h1>
         </div>
         <div id = "theme-mode">
-            <GSwitch {...label} checked = {checked} onChange={switchTheme}/>
+            <GSwitch {...label} checked = {theme} onChange={switchTheme}/>
         </div>
     </header>
     );

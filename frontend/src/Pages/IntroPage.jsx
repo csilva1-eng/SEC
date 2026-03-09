@@ -23,7 +23,7 @@ function IntroPage(){
         unmountOnExit
     >
         <div id = "open">
-          <h1 ref = {ref} className = "just-text">Chris<br/> Silva</h1>
+          <h1 ref = {ref} className = "just-text">Christopher<br/> Silva</h1>
         </div>
     </CSSTransition>
       );

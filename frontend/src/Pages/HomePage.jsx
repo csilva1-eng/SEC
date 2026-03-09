@@ -1,10 +1,8 @@
 import NavBar from '../components/NavBar.jsx';
 import Header from '../components/Header.jsx';
 
-
-
 function HomePage() {
-   
+
 
     return(
     <>
@@ -19,6 +17,12 @@ function HomePage() {
             <li>Programming</li>
         </ul>
     </div>
+        <div id = "home-bottom-center">
+            <p>
+                Building scalable and efficient products that generate real change for real people.
+            </p>
+        </div>
+        <div id = 'bottom-gradient'></div>
     </>
     );
 }
