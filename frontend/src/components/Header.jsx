@@ -5,17 +5,17 @@ import { useState, useEffect } from 'react';
 import linkedinBlack from '../assets/InBug-Black.png';
 import linkedinWhite from '../assets/InBug-White.png';
 
-const BGSwitch = styled(Switch)(({ theme }) => ({
-    '& .MuiSwitch-switchBase.Mui-checked': {
-      color: blueGrey[500],
-      '&:hover':{
-        backgroundColor: alpha(blueGrey[500], theme.palette.action.hoverOpacity),
-      },
-    },
-    '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-      backgroundColor: blueGrey[500],
-    },
-}));
+// const BGSwitch = styled(Switch)(({ theme }) => ({
+//     '& .MuiSwitch-switchBase.Mui-checked': {
+//       color: blueGrey[500],
+//       '&:hover':{
+//         backgroundColor: alpha(blueGrey[500], theme.palette.action.hoverOpacity),
+//       },
+//     },
+//     '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+//       backgroundColor: blueGrey[500],
+//     },
+// }));
 
 const GSwitch = styled(Switch)(({ theme }) => ({
     '& .MuiSwitch-switchBase.Mui-checked': {
@@ -61,7 +61,9 @@ function Header(){
     return(
 <   header id = "header">
         <div id = "socials">
+            <a href = "https://www.linkedin.com/in/christopher-silva-4b9902325/">
             <img src = {linkedin} alt = "logo" className = "logo"/>
+            </a>
         </div>
         <div id = "name-title">
             <h1>Christopher Silva</h1>

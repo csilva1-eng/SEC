@@ -201,10 +201,10 @@ body {
 }
 
 [date-theme="dark"] {
-    --background: #000000;
+    --background: #121212;
     --text: white;
     --gradient-start: #000000;
-    --gradient-end: #808080;
+    --gradient-end: #565656;
 
     --border-color: white;
     --text-shadow: grey;
