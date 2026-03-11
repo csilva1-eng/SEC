@@ -1,17 +1,19 @@
 
+
+/* Fonts */
 @font-face {
-  font-family: 'Blonde'; 
-  src: url('./fonts/Blonde_Font.otf') format('opentype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap; 
-}
+    font-family: 'Blonde';   
+    src: url('./fonts/Blonde_Font.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap; 
+}  
 
 @font-face {
     font-family: 'Futura';
     src: url('./fonts/futura-pt.woff') format('woff');
     font-display: swap;
-}
+}    
 
 @font-face {
     font-family: 'Futura';
@@ -19,7 +21,7 @@
     font-weight: 700;
     font-style: oblique;
     font-display: swap;
-}
+}    
 
 @font-face {
     font-family: 'Futura';
@@ -27,91 +29,51 @@
     font-weight: 500;
     font-style: italic;
     font-display: swap;
+}    
+
+/* Root variables and theme switch */
+:root {
+    --background: white;
+    --text: black;
+    --gradient-start: white;
+    --gradient-end: rgb(61, 61, 61);
+    
+    --border-color: black;
+    --text-shadow: grey;
+    --text-blur: rgb(33, 33, 33);
 }
 
+[date-theme="dark"] {
+    --background: #121212;
+    --text: white;
+    --gradient-start: #000000;
+    --gradient-end: #565656;
+    
+    --border-color: white;
+    --text-shadow: grey;
+    --text-blur: rgb(202, 202, 202);
+}
+
+body {
+    overflow: hidden;
+    background: var(--background);
+    color: var(--text);
+    margin: 0 0;
+}    
+
+/* header */
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-}
-
-.logo {
-    max-width: 5%;
-    height: auto;
-}
+}        
 
 #socials {
     display: flex;
     flex:1;
     justify-content: flex-start;
-}
-
-.nav-link{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    margin-left: 15px;
-}
-
-.nav-link li:not(:last-child)::after {
-    content: '|';
-    margin: 0 10px;
-}
-
-#passion-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 25vw;
-}
-#passion-list li {
-    text-align: center;
-    font-family: 'Futura';
-}
-/* #passion-list li:not(:last-child)::after {
-    content: '';
-    display: block;
-    margin: 6px 0;
-    border-bottom: 1px solid black;
-} */
-
-#passion-list li::before {
-    content: '';
-    display: block;
-    margin: 6px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.passion-text {
-    font-family: 'Futura';
-    font-weight: 500;
-    font-style: italic;
-    margin-bottom: 0;
-}
-
-#passions {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin-top: 5%;
-    width: 100vw;
-}
-
-a {
-    color: var(--text);
-    text-decoration: none;
-}
-
-.nav-link li {
-    display: inline;
-    font-family: 'Futura';
-    font-style: italic;
-    font-weight: 500;
-}
+}    
 
 #name-title {
     display: flex;
@@ -122,14 +84,111 @@ a {
     font-weight: 700;
     font-style: oblique;
     text-shadow: 1px 2px var(--text-shadow);
-}
+}    
 
 #theme-mode {
     flex:1;
     display:flex;
     justify-content: flex-end;
+}    
+
+.logo {
+    max-width: 5%;
+    height: auto;
+    margin-left: 5px;
+}   
+
+
+/* NavBar */
+#navBar {
+    border-top: 1px solid var(--border-color);
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 99vw;
+    margin-left: auto;
+    margin-right: auto;
+}    
+
+.nav-link{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+}    
+
+.nav-link li:not(:last-child)::after {
+    content: '|';
+    margin: 0 10px;
+}    
+
+.nav-link li:hover{
+    text-shadow: 0px 0px 20px var(--text-blur);
+    transition: text-shadow 0.3s ease-in;
+}    
+
+a {
+    text-decoration: none;
+    color: var(--text);
 }
 
+/* Home page content */
+#passion-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 25vw;
+}  
+
+#passion-list li {
+    text-align: center;
+    font-family: 'Futura';
+}  
+
+#passion-list li::before {
+    content: '';
+    display: block;
+    margin: 6px 0;
+    border-bottom: 1px solid var(--border-color);
+}    
+
+.passion-text {
+    font-family: 'Futura';
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 0;
+}    
+
+#passions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5%;
+    width: 100vw;
+}    
+
+.nav-link li {
+    display: inline;
+    font-family: 'Futura';
+    font-style: italic;
+    font-weight: 500;
+}    
+
+#home-bottom-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    margin-top: 5%;
+    font-family: 'Futura';
+    font-style: italic;
+
+}    
+
+/* intro page */
 #open {
     position:fixed;
     inset:0;
@@ -141,72 +200,65 @@ a {
     justify-content: center;
     align-items: center;
 
-}
+}    
 
 .fade-in-enter {
     opacity: 0;
-}
-#home-bottom-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    margin-top: 5%;
-    font-family: 'Futura';
-    font-style: italic;
-
-}
+}    
 
 .fade-in-enter-active {
     opacity:1; 
     transition: opacity 1700ms ease-in;
-}
+}   
+
 .just-text {
     font-family: 'Blonde', sans-serif;
     font-size: 48px;
     line-height:1.5;
     text-align:center;
-}
+}    
 
 .fade-exit {
     opacity:100%;
-}
+}    
 
 .fade-exit-active {
     opacity:0%;
     transition: opacity 1200ms;
+}    
+
+/* about page */
+#about-content {
+    display: block;
 }
 
+#about-content h1 {
+    font-family: 'Futura', sans-serif;
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 700;
+    text-align:center;
+    padding-top: 5vh;
+}
+
+#about-content p {
+    font-family: 'Futura', sans-serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    text-align:center;
+    padding: 0 2vw;
+    margin-top: 0vh;
+}
+
+
+/* page gradient */
 #bottom-gradient {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, transparent, var(--gradient-end));
 
-}
+}    
 
-body {
-    overflow: hidden;
-    background: var(--background);
-    color: var(--text);
-}
 
-:root {
-    --background: white;
-    --text: black;
-    --gradient-start: white;
-    --gradient-end: grey;
-
-    --border-color: black;
-    --text-shadow: grey;
-}
-
-[date-theme="dark"] {
-    --background: #121212;
-    --text: white;
-    --gradient-start: #000000;
-    --gradient-end: #565656;
-
-    --border-color: white;
-    --text-shadow: grey;
-}
 
