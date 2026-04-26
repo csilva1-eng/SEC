@@ -18,6 +18,7 @@ function About(){
             I currently do most of my work in MERN stack but I am always looking to expand my skill set and learn new technologies.
             If you are impressed by my work or just another likeminded invidual, I would love to connect with you on linkedin (top left) or through email (contact page)! 
         </p>
+        {/* maybe include fun facts down here so there is some scroll? */}
     </div>
     <div id = 'bottom-gradient'></div>
     </>);
