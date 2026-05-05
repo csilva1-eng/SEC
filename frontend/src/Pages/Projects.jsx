@@ -33,7 +33,7 @@ export default function Projects() {
       
           {projects.map((project, index) => {
             return (
-              <a href={project.html_url} target="_blank" rel="noopener noreferrer">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
               <div className = "project-card" key={index}>
                 <img src = {project.imageUrl} alt = {project.name}/>
                 <hr></hr>
