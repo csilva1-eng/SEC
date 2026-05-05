@@ -1,6 +1,4 @@
 
-
-/* Fonts */
 @font-face {
     font-family: 'Blonde';   
     src: url('./fonts/Blonde_Font.otf') format('opentype');
@@ -31,16 +29,17 @@
     font-display: swap;
 }    
 
-/* Root variables and theme switch */
 :root {
-    --background: white;
+    --background: linear-gradient(180deg, rgba(250,250,250,1) 0%, rgba(235,238,243,1) 100%);
     --text: black;
     --gradient-start: white;
     --gradient-end: rgb(61, 61, 61);
-    
+
+    --nav-border-color: black;
     --border-color: black;
     --text-shadow: grey;
     --text-blur: rgb(33, 33, 33);
+    --contact-text: black;
 }
 
 [date-theme="dark"] {
@@ -49,19 +48,20 @@
     --gradient-start: #000000;
     --gradient-end: #565656;
     
-    --border-color: white;
+    --nav-border-color: white;
+    --border-color: black;
     --text-shadow: grey;
     --text-blur: rgb(202, 202, 202);
+    --contact-text: black;
 }
 
 body {
-    overflow: hidden;
+    overflow-y: auto;
     background: var(--background);
     color: var(--text);
-    margin: 0 0;
-}    
+    margin: 0;
+}
 
-/* header */
 #header {
     display: flex;
     justify-content: space-between;
@@ -79,11 +79,11 @@ body {
     display: flex;
     flex:1;
     justify-content: center;
-    font-size: 14px;
+    font-size: 16px;
     font-family: 'Futura';
     font-weight: 700;
     font-style: oblique;
-    text-shadow: 1px 2px var(--text-shadow);
+    /* text-shadow: 1px 2px var(--text-shadow); */
 }    
 
 #theme-mode {
@@ -99,9 +99,8 @@ body {
 }   
 
 
-/* NavBar */
 #navBar {
-    border-top: 1px solid var(--border-color);
+    border-top: 1px solid var(--nav-border-color);
     padding-top: 10px;
     display: flex;
     justify-content: center;
@@ -134,12 +133,13 @@ a {
     color: var(--text);
 }
 
-/* Home page content */
+
 #passion-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     width: 25vw;
+    color: var(--contact-text);
 }  
 
 #passion-list li {
@@ -159,6 +159,8 @@ a {
     font-weight: 500;
     font-style: italic;
     margin-bottom: 0;
+    color: var(--contact-text);
+
 }    
 
 #passions {
@@ -167,7 +169,7 @@ a {
     align-items: center;
     text-align: center;
     margin-top: 5%;
-    width: 100vw;
+    width: 100%;
 }    
 
 .nav-link li {
@@ -181,12 +183,115 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: 100%;
     margin-top: 5%;
     font-family: 'Futura';
     font-style: italic;
+    color: var(--contact-text);
 
 }    
+
+.page-shell {
+    min-height: calc(100vh - 140px);
+    padding: 60px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: transparent;
+}
+
+.page-card {
+    width: min(100%, 560px);
+    padding: 40px 36px;
+    border-radius: 28px;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+}
+
+.contact-header {
+    margin-bottom: 32px;
+}
+
+.contact-tag {
+    margin: 0 0 10px;
+    font-family: 'Futura';
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--contact-text);
+    
+}
+
+.contact-header h1 {
+    margin: 0 0 14px;
+    font-family: 'Futura';
+    font-size: clamp(2rem, 2.4vw, 2.8rem);
+    line-height: 1.05;
+    color: var(--contact-text);
+}
+
+.contact-description {
+    margin: 0;
+    color: rgba(0,0,0,0.7);
+    line-height: 1.75;
+}
+
+.contact-form label {
+    display: block;
+    margin: 20px 0 8px;
+    font-family: 'Futura';
+    font-weight: 700;
+    color: rgba(0,0,0,0.8);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.12);
+    background: #fff;
+    color: #111;
+    font-family: 'Futura';
+    font-size: 1rem;
+    line-height: 1.5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: rgba(0,0,0,0.25);
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+}
+
+.contact-form textarea {
+    min-height: 170px;
+    resize: vertical;
+}
+
+.contact-form button {
+    margin-top: 28px;
+    width: 100%;
+    padding: 16px 18px;
+    border: none;
+    border-radius: 999px;
+    background: #111;
+    color: #fff;
+    font-family: 'Futura';
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-form button:hover {
+    transform: translateY(-1px);
+    background: #222;
+}
 
 /* intro page */
 #open {
@@ -227,9 +332,33 @@ a {
     transition: opacity 1200ms;
 }    
 
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 5px;
+    z-index: 1000;
+}
+
+.scroll-to-top button {
+    width: clamp(36px, 3.5vw, 52px);
+    height: clamp(36px, 3.5vw, 52px);
+    background-color: var(--text);
+    border: none;
+    cursor: pointer;
+    clip-path: polygon(50% 0%, 0% 50%, 35% 50%, 35% 100%, 65% 100%, 65% 50%, 100% 50%);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.scroll-to-top button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.16);
+}
+
 /* about page */
 #about-content {
     display: block;
+    color: var(--contact-text);
 }
 
 #about-content h1 {
@@ -251,14 +380,74 @@ a {
     margin-top: 0vh;
 }
 
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: black;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.project-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+.project-card hr {
+    margin-bottom: 16px;
+}
+
+.project-card h3 {
+    margin: 0 0 12px;
+    font-family: 'Futura';
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--contact-text);
+}
+
+.project-card p {
+    margin: 0;
+    font-family: 'Futura';
+    font-size: 0.9rem;
+    color: black;
+    line-height: 1.5;
+}
+
+.readme{
+    font-family: 'Future';
+    font-style: italic;
+    font-weight: 500;
+    color: black;
+}
 
 /* page gradient */
 #bottom-gradient {
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100vw;
-    height: 100vh;
+    height: 280px;
+    pointer-events: none;
+    z-index: -1;
     background: linear-gradient(to bottom, transparent, var(--gradient-end));
-
-}    
+}
 
 
 

@@ -8,21 +8,24 @@ function HomePage() {
     <>
     <Header />
     <NavBar/>
-    <div id = "passions">
-
-        <h3 className = "passion-text">Passionate About</h3>
-        <ul id = 'passion-list'>
-            <li>Software Development</li>
-            <li>Music</li>
-            <li>Programming</li>
-        </ul>
-    </div>
+    <div className="page-shell">
+      <div className="page-card">
+        <div id="passions">
+            <h3 className = "passion-text">Passionate About</h3>
+            <ul id = 'passion-list'>
+                <li>Software Development</li>
+                <li>Music</li>
+                <li>Programming</li>
+            </ul>
+        </div>
         <div id = "home-bottom-center">
             <p>
                 Building scalable and efficient products that generate real change for real people.
             </p>
         </div>
-        <div id = 'bottom-gradient'></div>
+      </div>
+    </div>
+    <div id = 'bottom-gradient'></div>
     </>
     );
 }

@@ -5,7 +5,7 @@ import './index.css';
 import IntroPage from './Pages/IntroPage';
 import {Routes, Route} from 'react-router-dom';
 import About from './Pages/About';
-// import Projects from './Pages/Projects';
+import Projects from './Pages/Projects';
 import Contact from './Pages/Contact';
 
 function App() {
@@ -31,7 +31,7 @@ function App() {
     <Routes>
       <Route path = "/" element = {<HomePage />} />
       <Route path = "/about" element = {<About />} />
-      {/* { <Route path = "/projects" element = {<Projects />} /> */}
+      <Route path = "/projects" element = {<Projects />} />
       <Route path = "/contact" element = {<Contact />} />
     </Routes>
           </div>
